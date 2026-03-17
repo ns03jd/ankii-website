@@ -1,0 +1,142 @@
+<!-- ANKII EMPIRE: FULL PRO SYSTEM -->
+
+<!-- ================= WEBSITE PRO MAX ================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ANKII EMPIRE</title>
+<style>
+body {margin:0;font-family:Arial;background:#020617;color:white;text-align:center}
+header {padding:25px;font-size:32px;font-weight:bold}
+.section {margin:30px}
+.btn {padding:14px 22px;background:#22c55e;color:black;border-radius:12px;text-decoration:none;margin:10px;display:inline-block;font-weight:bold}
+.card {background:#111827;padding:20px;margin:15px;border-radius:15px}
+</style>
+</head>
+<body>
+
+<header>ANKII EMPIRE 👑🔥</header>
+
+<div class="section">
+<a class="btn" href="https://discord.gg/YOUR_LINK" target="_blank">Join Discord</a>
+<a class="btn" href="#vip">Join VIP 💎</a>
+</div>
+
+<div class="section card">
+<h2>🔥 Live Stream</h2>
+<iframe width="300" height="170" src="https://www.youtube.com/embed/live_stream?channel=YOUR_CHANNEL_ID"></iframe>
+</div>
+
+<div class="section card">
+<h2>🎥 Latest Video</h2>
+<iframe width="300" height="170" src="https://www.youtube.com/embed/YOUR_VIDEO"></iframe>
+</div>
+
+<div class="section card" id="vip">
+<h2>💎 VIP MEMBERSHIP</h2>
+<p>Play with ANKII + Private Access + Giveaways</p>
+<p>Only ₹99/month</p>
+<a class="btn" href="#">Pay & Join</a>
+</div>
+
+</body>
+</html>
+
+
+<!-- ================= ANIMATED STREAM OVERLAY ================= -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {margin:0;overflow:hidden}
+.banner {
+position:fixed;
+top:0;
+width:100%;
+background:red;
+color:white;
+padding:10px;
+text-align:center;
+animation:slide 2s infinite alternate;
+}
+@keyframes slide {
+from {opacity:0.5}
+to {opacity:1}
+}
+.box {
+position:fixed;
+bottom:20px;
+left:20px;
+background:rgba(0,0,0,0.7);
+padding:15px;
+border-radius:15px;
+}
+</style>
+</head>
+<body>
+<div class="banner">🔴 ANKII LIVE NOW 🔥</div>
+<div class="box">Subscribe + Join Discord 💎</div>
+</body>
+</html>
+
+
+// ================= ULTRA BOT (AI + LEVEL + VIP) =================
+
+const { Client, GatewayIntentBits } = require('discord.js');
+const client = new Client({
+  intents: [
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.MessageContent,
+    GatewayIntentBits.GuildMembers
+  ]
+});
+
+let xp = {};
+
+client.on('ready', () => {
+  console.log('ANKII EMPIRE BOT ACTIVE 👑');
+});
+
+client.on('guildMemberAdd', member => {
+  member.guild.channels.cache.get('WELCOME_CHANNEL_ID')
+  .send(`🔥 Welcome ${member} to ANKII EMPIRE!`);
+});
+
+client.on('messageCreate', msg => {
+  if(msg.author.bot) return;
+
+  // XP SYSTEM
+  xp[msg.author.id] = (xp[msg.author.id] || 0) + 5;
+
+  if(xp[msg.author.id] === 50){
+    msg.reply('🎮 You reached Level 1!');
+  }
+
+  // COMMANDS
+  if(msg.content === '!live'){
+    msg.reply('🔴 ANKII is LIVE! Join fast 🔥');
+  }
+
+  if(msg.content === '!vip'){
+    msg.reply('💎 VIP ₹99 - DM to join');
+  }
+
+  if(msg.content === '!discord'){
+    msg.reply('Join ANKII Army 🔥');
+  }
+
+});
+
+client.login('YOUR_BOT_TOKEN');
+
+
+/* ================= EMPIRE SYSTEM =================
+1. YouTube Live → Discord Ping
+2. Discord → Active Fans
+3. Fans → Clips → Shorts
+4. Shorts → Viral Growth
+5. Growth → VIP Income
+================= */
